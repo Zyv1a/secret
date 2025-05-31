@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini-jeu 3</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; background-color: #e3fafc; }
+    button { padding: 20px; font-size: 20px; background-color: #15aabf; color: white; border: none; border-radius: 10px; margin-top: 150px; }
+  </style>
+</head>
+<body>
+  <h2>Mini-jeu 3 : Clique vite quand tu vois le bouton ! 🖱️</h2>
+  <p id="msg">Prépare-toi...</p>
+  <button id="clickMe" style="display: none;" onclick="finish()">CLIQUE !</button>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('clickMe').style.display = 'inline-block';
+      document.getElementById('msg').textContent = 'MAINTENANT !!!';
+    }, Math.random() * 3000 + 2000); // aléatoire entre 2 et 5s
+
+    function finish() {
+      alert("Bien joué, rapide comme l'éclair ⚡");
+      window.location.href = 'final.html';
+    }
+  </script>
+</body>
+</html>

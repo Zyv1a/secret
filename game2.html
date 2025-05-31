@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini-jeu 2</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; background-color: #d0ebff; margin-top: 60px; }
+    button { margin: 10px; padding: 12px 25px; font-size: 18px; border-radius: 8px; background-color: #4dabf7; color: white; border: none; }
+  </style>
+</head>
+<body>
+  <h2>Mini-jeu 2 : Quiz ! 🤓</h2>
+  <p>Combien y a-t-il de lettres dans "Lenny" ?</p>
+  <button onclick="checkAnswer(4)">4</button>
+  <button onclick="checkAnswer(5)">5</button>
+  <button onclick="checkAnswer(6)">6</button>
+
+  <script>
+    function checkAnswer(n) {
+      if (n === 5) {
+        alert("Bravo ! 😄");
+        window.location.href = 'game3.html';
+      } else {
+        alert("Hmm... essaie encore !");
+      }
+    }
+  </script>
+</body>
+</html>
