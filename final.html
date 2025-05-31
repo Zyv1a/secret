@@ -4,15 +4,42 @@
   <meta charset="UTF-8">
   <title>Je t'aime</title>
   <style>
-    body { text-align: center; font-family: 'Comic Sans MS', cursive; background-color: #ffe8cc; padding-top: 100px; }
-    h1 { font-size: 50px; color: #f03e3e; }
+    body {
+      text-align: center;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(120deg, #ffc9de, #ffe066);
+      padding-top: 100px;
+      animation: bg 10s infinite alternate;
+    }
+
+    @keyframes bg {
+      0% { background: #ffc9de; }
+      100% { background: #ffe066; }
+    }
+
+    h1 { font-size: 50px; color: #e03131; }
     p { font-size: 28px; color: #212529; margin-top: 40px; }
+
+    .heart {
+      font-size: 80px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
   </style>
 </head>
 <body>
-  <h1>🎉 Bravo Lenny ! 🎉</h1>
-  <p>Tu as réussi tous les mini-jeux !</p>
-  <p>Mais en vrai, j’avais une surprise à te faire...</p>
-  <p style="font-size: 40px; margin-top: 60px;"><strong>Je t’aime de tout mon cœur ❤️</strong></p>
+  <h1>✨ Lenny, tu as gagné ! ✨</h1>
+  <div class="heart">❤️</div>
+  <p>Tu as tout réussi, t’es vraiment incroyable.</p>
+  <p style="margin-top: 50px; font-size: 36px;"><strong>Et surtout...</strong></p>
+  <p style="margin-top: 30px; font-size: 40px;"><strong>Je t’aime de tout mon cœur 💘</strong></p>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
 </body>
 </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini-jeu 4</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; background-color: #e6fcf5; margin-top: 60px; }
+    .letter {
+      display: inline-block;
+      padding: 15px;
+      font-size: 24px;
+      background-color: #63e6be;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Mini-jeu 4 : Reconstitue le mot</h2>
+  <p>Clique les lettres dans le bon ordre pour former mon mot préféré 😏</p>
+  <div id="letters"></div>
+  <p id="status" style="margin-top: 30px; font-size: 20px;"></p>
+
+  <script>
+    const correctWord = ['L', 'E', 'N', 'N', 'Y'];
+    let current = [];
+    const letters = [...correctWord].sort(() => Math.random() - 0.5);
+    const container = document.getElementById('letters');
+
+    letters.forEach((letter, i) => {
+      const span = document.createElement('span');
+      span.className = 'letter';
+      span.textContent = letter;
+      span.onclick = () => {
+        current.push(letter);
+        span.style.visibility = 'hidden';
+        if (current.length === correctWord.length) {
+          if (current.join('') === correctWord.join('')) {
+            document.getElementById('status').textContent = "Bien joué !";
+            setTimeout(() => window.location.href = 'game5.html', 1000);
+          } else {
+            document.getElementById('status').textContent = "Oops ! Réessaie.";
+            setTimeout(() => location.reload(), 1000);
+          }
+        }
+      };
+      container.appendChild(span);
+    });
+  </script>
+</body>
+</html>
